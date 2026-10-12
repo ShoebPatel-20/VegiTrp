@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/brand_surface_light"
+    tools:context=".activities.KYCActivity">
+
+    <!-- Top App Bar / Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/brand_green_dark"
+        app:titleTextColor="@color/white"
+        app:navigationIconTint="@color/white"
+        app:title="@string/kyc_toolbar_title"
+        app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:elevation="4dp" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:paddingBottom="36dp">
+
+            <!-- 1. HEADER INFO CARD -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/brand_card_stroke"
+                app:strokeWidth="1.2dp"
+                app:cardBackgroundColor="@color/brand_surface_card"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                    <FrameLayout
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/rounded_background"
+                        android:backgroundTint="@color/brand_green_light">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_badge_role"
+                            app:tint="@color/brand_green_primary"
+                            android:importantForAccessibility="no" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="14dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/kyc_header_title"
+                            android:textColor="@color/brand_text_title"
+                            android:textSize="16sp"
+                            android:fontFamily="sans-serif-bold"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/kyc_header_subtitle"
+                            android:textColor="@color/brand_text_body"
+                            android:textSize="12sp"
+                            android:layout_marginTop="3dp"
+                            android:lineSpacingExtra="2dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 2. VERIFICATION STATUS CARD (Visible when an existing document is retrieved) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardKycStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/brand_card_stroke"
+                app:strokeWidth="1.2dp"
+                app:cardBackgroundColor="@color/brand_surface_card"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="6dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Verification Status"
+                            android:textColor="@color/brand_text_title"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif-bold"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvKycStatusBadge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="UNDER REVIEW"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif-bold"
+                            android:letterSpacing="0.05"
+                            android:textColor="@color/brand_green_primary"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:paddingTop="3dp"
+                            android:paddingBottom="3dp"
+                            android:background="@drawable/rounded_background"
+                            android:backgroundTint="@color/brand_green_light" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvKycStatusDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Your document has been submitted and is currently pending review."
+                        android:textColor="@color/brand_text_muted"
+                        android:textSize="12sp"
+                        android:lineSpacingExtra="2dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 3. DOCUMENT UPLOAD CARD -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/brand_card_stroke"
+                app:strokeWidth="1.2dp"
+                app:cardBackgroundColor="@color/brand_surface_card"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:gravity="center_horizontal">
+
+                    <!-- Document Preview Frame -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/brand_card_stroke"
+                        app:strokeWidth="1dp"
+                        app:cardBackgroundColor="@color/brand_surface_light"
+                        android:layout_marginBottom="16dp">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/ivDocumentPreview"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_profile_placeholder"
+                                android:scaleType="centerInside"
+                                app:tint="@color/brand_text_muted"
+                                android:contentDescription="Document Preview" />
+                        </FrameLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/kyc_upload_guideline"
+                        android:textColor="@color/brand_text_muted"
+                        android:textSize="12sp"
+                        android:gravity="center"
+                        android:layout_marginBottom="18dp" />
+
+                    <!-- Select Image Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSelectImage"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:text="@string/kyc_btn_select_image"
+                        android:textColor="@color/brand_green_primary"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-bold"
+                        app:icon="@drawable/ic_edit"
+                        app:iconTint="@color/brand_green_primary"
+                        app:iconGravity="textStart"
+                        app:iconPadding="8dp"
+                        app:strokeColor="@color/brand_green_primary"
+                        app:strokeWidth="1.5dp"
+                        app:cornerRadius="14dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- Upload / Submit Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnUploadDocument"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:text="@string/kyc_btn_submit"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-bold"
+                        android:background="@drawable/bg_login_button"
+                        app:backgroundTint="@null"
+                        app:cornerRadius="14dp"
+                        android:elevation="3dp" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 4. SECURITY & PRIVACY DISCLAIMER -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/brand_card_stroke"
+                app:strokeWidth="1.2dp"
+                app:cardBackgroundColor="@color/brand_surface_card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="14dp"
+                    android:gravity="center_vertical">
+
+                    <FrameLayout
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/rounded_background"
+                        android:backgroundTint="@color/brand_green_light">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_lock"
+                            app:tint="@color/brand_green_primary"
+                            android:importantForAccessibility="no" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/kyc_security_note"
+                        android:textColor="@color/brand_text_muted"
+                        android:textSize="12sp"
+                        android:layout_marginStart="12dp"
+                        android:lineSpacingExtra="2dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

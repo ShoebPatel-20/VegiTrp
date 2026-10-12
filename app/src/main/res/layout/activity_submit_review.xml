@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/brand_surface_light"
+    tools:context=".activities.SubmitReviewActivity">
+
+    <!-- Top App Bar Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/brand_green_dark"
+        app:titleTextColor="@color/white"
+        app:subtitleTextColor="@color/brand_green_tint"
+        app:navigationIconTint="@color/white"
+        app:title="@string/review_toolbar_title"
+        app:subtitle="@string/review_toolbar_subtitle"
+        app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:elevation="2dp" />
+
+    <!-- Scrollable Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="24dp"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- Hero Rating Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/brand_card_stroke"
+                app:strokeWidth="1dp"
+                app:cardBackgroundColor="@color/brand_surface_card"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:padding="24dp">
+
+                    <!-- Star Badge Icon -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        app:cardCornerRadius="32dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@color/brand_green_light"
+                        android:layout_marginBottom="16dp">
+
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_star_badge"
+                            app:tint="@color/brand_accent_gold"
+                            android:contentDescription="@string/review_heading_title" />
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Main Title -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/review_heading_title"
+                        android:textSize="20sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:textStyle="bold"
+                        android:textColor="@color/brand_text_title"
+                        android:gravity="center"
+                        android:layout_marginBottom="6dp" />
+
+                    <!-- Subtitle Description -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/review_heading_subtitle"
+                        android:textSize="13sp"
+                        android:textColor="@color/brand_text_muted"
+                        android:gravity="center"
+                        android:lineSpacingExtra="2dp"
+                        android:layout_marginBottom="24dp" />
+
+                    <!-- Interactive Rating Bar -->
+                    <RatingBar
+                        android:id="@+id/ratingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        android:stepSize="0.5"
+                        android:rating="0"
+                        android:progressTint="@color/brand_accent_gold"
+                        android:secondaryProgressTint="@color/brand_accent_gold"
+                        android:progressBackgroundTint="@color/brand_card_stroke"
+                        android:layout_marginBottom="8dp" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Feedback Comment Box Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/brand_card_stroke"
+                app:strokeWidth="1dp"
+                app:cardBackgroundColor="@color/brand_surface_card"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Written Feedback (Optional)"
+                        android:textSize="14sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:textStyle="bold"
+                        android:textColor="@color/brand_text_title"
+                        android:layout_marginBottom="12dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        app:boxStrokeColor="@color/brand_green_primary"
+                        app:hintTextColor="@color/brand_green_primary"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        android:hint="@string/review_comment_hint">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etComment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minLines="4"
+                            android:maxLines="8"
+                            android:gravity="top"
+                            android:textColor="@color/brand_text_title"
+                            android:textSize="14sp"
+                            android:inputType="textCapSentences|textMultiLine" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Submit Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSubmitReview"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="@string/review_btn_submit"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-bold"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/brand_green_primary"
+                app:cornerRadius="12dp"
+                app:elevation="2dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Community Transparency Note -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/rounded_background"
+                android:backgroundTint="@color/brand_green_soft"
+                android:padding="12dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_sprout_leaf"
+                    app:tint="@color/brand_green_primary"
+                    android:contentDescription="Transparency Note"
+                    android:layout_marginEnd="10dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/review_community_note"
+                    android:textColor="@color/brand_green_dark"
+                    android:textSize="12sp"
+                    android:lineSpacingExtra="2dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

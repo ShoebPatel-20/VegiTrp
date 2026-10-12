@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brand_surface_light"
+    tools:context=".activities.OrderDetailsActivity">
+
+    <!-- Top App Bar Toolbar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/brand_green_dark"
+        app:elevation="2dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/brand_green_dark"
+            app:titleTextColor="@color/white"
+            app:subtitleTextColor="@color/brand_green_tint"
+            app:navigationIconTint="@color/white"
+            app:title="@string/order_details_toolbar_title"
+            app:subtitle="@string/order_details_toolbar_subtitle"
+            app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="40dp"
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Card 1: Produce Summary Hero Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/brand_card_stroke"
+                app:strokeWidth="1dp"
+                app:cardBackgroundColor="@color/brand_surface_card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                    <!-- Produce Thumbnail Frame -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@color/brand_green_light"
+                        android:layout_marginEnd="16dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/bg_vegetable_basket"
+                            android:scaleType="centerCrop"
+                            android:contentDescription="@string/vegetable_name_placeholder" />
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <!-- Product Name -->
+                        <TextView
+                            android:id="@+id/tv_product_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/brand_text_title"
+                            android:textSize="18sp"
+                            android:fontFamily="sans-serif-bold"
+                            android:textStyle="bold"
+                            android:text="Product Name" />
+
+                        <!-- Quantity Pill -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="4dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Quantity: "
+                                android:textColor="@color/brand_text_muted"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:id="@+id/tv_quantity"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/brand_text_body"
+                                android:textSize="13sp"
+                                android:fontFamily="sans-serif-bold"
+                                android:textStyle="bold"
+                                android:text="0 KG" />
+                        </LinearLayout>
+
+                        <!-- Price Tag -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="6dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Offer: ₹"
+                                android:textColor="@color/brand_green_primary"
+                                android:textSize="15sp"
+                                android:fontFamily="sans-serif-bold"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/brand_green_primary"
+                                android:textSize="18sp"
+                                android:fontFamily="sans-serif-black"
+                                android:textStyle="bold"
+                                android:text="0.00" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card 2: Delivery & Logistics -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/brand_card_stroke"
+                app:strokeWidth="1dp"
+                app:cardBackgroundColor="@color/brand_surface_card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/order_details_delivery_section_title"
+                        android:textColor="@color/brand_text_title"
+                        android:textSize="15sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="12dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:background="@drawable/bg_chat_input_field"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ic_location_pin"
+                            android:layout_marginEnd="12dp"
+                            app:tint="@color/brand_green_primary"
+                            android:contentDescription="Delivery Pin" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Destination PIN: "
+                            android:textColor="@color/brand_text_muted"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_pin_code"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="000000"
+                            android:textColor="@color/brand_text_title"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif-bold"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card 3: Negotiations and Offers Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/brand_card_stroke"
+                app:strokeWidth="1dp"
+                app:cardBackgroundColor="@color/brand_surface_card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/order_details_negotiation_section_title"
+                        android:textColor="@color/brand_text_title"
+                        android:textSize="15sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/order_details_negotiation_section_desc"
+                        android:textColor="@color/brand_text_muted"
+                        android:textSize="12sp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_negotiations"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Actions Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <!-- Buyer Buttons Container -->
+                <LinearLayout
+                    android:id="@+id/ll_buyer_buttons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:visibility="gone"
+                    android:layout_marginBottom="10dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnNegotiate"
+                        android:layout_width="0dp"
+                        android:layout_height="52dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="6dp"
+                        app:cornerRadius="12dp"
+                        android:text="NEGOTIATE"
+                        android:backgroundTint="@color/brand_accent_gold"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:textStyle="bold"
+                        app:elevation="2dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAccept"
+                        android:layout_width="0dp"
+                        android:layout_height="52dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="6dp"
+                        app:cornerRadius="12dp"
+                        android:text="ACCEPT"
+                        android:backgroundTint="@color/brand_green_primary"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:textStyle="bold"
+                        app:elevation="2dp" />
+                </LinearLayout>
+
+                <!-- Farmer Buttons Container -->
+                <LinearLayout
+                    android:id="@+id/ll_farmer_buttons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:visibility="gone"
+                    android:layout_marginBottom="10dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_reject"
+                        android:layout_width="0dp"
+                        android:layout_height="52dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="6dp"
+                        app:cornerRadius="12dp"
+                        android:backgroundTint="#EF4444"
+                        android:textColor="@color/white"
+                        android:text="Reject"
+                        android:textSize="13sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:textStyle="bold"
+                        app:elevation="2dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_accept"
+                        android:layout_width="0dp"
+                        android:layout_height="52dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="6dp"
+                        app:cornerRadius="12dp"
+                        android:backgroundTint="@color/brand_green_primary"
+                        android:textColor="@color/white"
+                        android:text="Accept"
+                        android:textSize="13sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:textStyle="bold"
+                        app:elevation="2dp" />
+                </LinearLayout>
+
+                <!-- Driver Buttons Container -->
+                <LinearLayout
+                    android:id="@+id/ll_driver_buttons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:visibility="gone"
+                    android:layout_marginBottom="10dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_interest"
+                        android:layout_width="0dp"
+                        android:layout_height="52dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="6dp"
+                        app:cornerRadius="12dp"
+                        android:backgroundTint="@color/driver_blue"
+                        android:textColor="@color/white"
+                        android:text="Interest"
+                        android:textSize="13sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:textStyle="bold"
+                        app:elevation="2dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_driver_accept"
+                        android:layout_width="0dp"
+                        android:layout_height="52dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="6dp"
+                        app:cornerRadius="12dp"
+                        android:backgroundTint="@color/brand_green_primary"
+                        android:textColor="@color/white"
+                        android:text="Accept"
+                        android:textSize="13sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:textStyle="bold"
+                        app:elevation="2dp" />
+                </LinearLayout>
+
+                <!-- Farmer Make an Offer Action -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_negotiate"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    app:cornerRadius="12dp"
+                    android:backgroundTint="@color/brand_green_dark"
+                    android:textColor="@color/white"
+                    android:text="@string/order_details_btn_make_offer"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif-bold"
+                    android:textStyle="bold"
+                    app:elevation="2dp"
+                    android:layout_marginBottom="10dp" />
+
+                <!-- View Invoice Action (When Accepted/Completed) -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_view_invoice"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    app:cornerRadius="12dp"
+                    android:backgroundTint="@color/brand_green_primary"
+                    android:textColor="@color/white"
+                    android:text="@string/order_details_btn_view_invoice"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif-bold"
+                    android:textStyle="bold"
+                    app:elevation="2dp"
+                    android:visibility="gone"
+                    android:layout_marginBottom="10dp" />
+
+                <!-- View Map Route Action -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_view_route"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    app:cornerRadius="12dp"
+                    app:strokeColor="@color/brand_green_primary"
+                    app:strokeWidth="1.5dp"
+                    android:textColor="@color/brand_green_primary"
+                    android:text="@string/order_details_btn_view_route"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif-bold"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

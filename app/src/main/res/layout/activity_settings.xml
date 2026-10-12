@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_wallet"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="My Wallet"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/btn_edit_profile"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Edit Profile Images"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/btn_notifications"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Notifications"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/btn_kyc"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Upload KYC Document"
+            android:layout_marginBottom="32dp"/>
+
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/logout_button"
+            android:backgroundTint="#F44336"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

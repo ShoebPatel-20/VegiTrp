@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brand_surface_light"
+    tools:context=".activities.MapActivity">
+
+    <!-- Top App Bar Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@color/brand_green_dark"
+        app:titleTextColor="@color/white"
+        app:navigationIconTint="@color/white"
+        app:title="@string/map_toolbar_title"
+        app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:elevation="2dp" />
+
+    <!-- Google Map Fragment -->
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar" />
+
+    <!-- Floating Route Information Overlay Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardRouteInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:strokeColor="@color/brand_card_stroke"
+        app:strokeWidth="1dp"
+        app:cardBackgroundColor="@color/brand_surface_card">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Route Header Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/tvRouteBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/map_live_tracking_badge"
+                    android:textColor="@color/brand_green_primary"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-bold"
+                    android:letterSpacing="0.05"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:background="@drawable/rounded_background"
+                    android:backgroundTint="@color/brand_green_soft" />
+
+                <TextView
+                    android:id="@+id/tvRouteHeaderTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/map_toolbar_route_title"
+                    android:textColor="@color/brand_text_title"
+                    android:textSize="15sp"
+                    android:fontFamily="sans-serif-bold"
+                    android:textStyle="bold"
+                    android:layout_marginStart="10dp" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_map_route"
+                    app:tint="@color/brand_green_primary"
+                    android:contentDescription="Route Icon" />
+            </LinearLayout>
+
+            <!-- Pickup Point Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/green_dot"
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="Origin Marker" />
+
+                <TextView
+                    android:id="@+id/tvPickupPoint"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/map_pickup_label"
+                    android:textColor="@color/brand_text_title"
+                    android:textSize="13sp"
+                    android:fontFamily="sans-serif-bold"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="12dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginBottom="4dp"
+                android:background="@color/brand_card_stroke" />
+
+            <!-- Dropoff Point Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/red_dot"
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="Destination Marker" />
+
+                <TextView
+                    android:id="@+id/tvDropoffPoint"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/map_destination_label"
+                    android:textColor="@color/brand_text_title"
+                    android:textSize="13sp"
+                    android:fontFamily="sans-serif-bold"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>

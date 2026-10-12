@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "400727376442",
+    "project_id": "vegitrp",
+    "storage_bucket": "vegitrp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:400727376442:android:1000d972e868fb442eeb03",
+        "android_client_info": {
+          "package_name": "com.example.vegitrp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4ul7LgR55gqzHrBfZ-x9bcbsWKUeJNO0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

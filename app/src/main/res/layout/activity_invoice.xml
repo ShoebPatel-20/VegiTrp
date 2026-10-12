@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/brand_surface_light"
+    tools:context=".activities.InvoiceActivity">
+
+    <!-- Top App Bar Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/brand_green_dark"
+        app:titleTextColor="@color/white"
+        app:subtitleTextColor="@color/brand_green_tint"
+        app:navigationIconTint="@color/white"
+        app:title="@string/invoice_toolbar_title"
+        app:subtitle="@string/invoice_toolbar_subtitle"
+        app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:elevation="2dp" />
+
+    <!-- Scrollable Document Area -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="24dp"
+        android:clipToPadding="false">
+
+        <!-- Invoice Paper Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/invoice_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:strokeColor="@color/brand_card_stroke"
+            app:strokeWidth="1dp"
+            app:cardBackgroundColor="@color/brand_surface_card">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Document Header Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/invoice_heading"
+                            android:textSize="22sp"
+                            android:fontFamily="sans-serif-bold"
+                            android:textStyle="bold"
+                            android:textColor="@color/brand_green_primary"
+                            android:letterSpacing="0.05" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="VegiTrp Official Agricultural Platform"
+                            android:textSize="12sp"
+                            android:textColor="@color/brand_text_muted"
+                            android:layout_marginTop="2dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_leaf_logo"
+                        app:tint="@color/brand_green_primary"
+                        android:contentDescription="VegiTrp Logo" />
+                </LinearLayout>
+
+                <!-- Header Separator -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/brand_card_stroke"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Meta Info Panel -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_chat_input_field"
+                    android:padding="14dp"
+                    android:layout_marginBottom="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="6dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Invoice ID:"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif-bold"
+                            android:textSize="13sp"
+                            android:textColor="@color/brand_text_muted" />
+
+                        <TextView
+                            android:id="@+id/tvInvoiceId"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="INV_---"
+                            android:gravity="end"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif-bold"
+                            android:textColor="@color/brand_text_title" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="6dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Order ID:"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif-bold"
+                            android:textSize="13sp"
+                            android:textColor="@color/brand_text_muted" />
+
+                        <TextView
+                            android:id="@+id/tvOrderId"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="---"
+                            android:gravity="end"
+                            android:textSize="13sp"
+                            android:textColor="@color/brand_text_title" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="6dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Issue Date:"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif-bold"
+                            android:textSize="13sp"
+                            android:textColor="@color/brand_text_muted" />
+
+                        <TextView
+                            android:id="@+id/tvDate"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="---"
+                            android:gravity="end"
+                            android:textSize="13sp"
+                            android:textColor="@color/brand_text_title" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Issue Time:"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif-bold"
+                            android:textSize="13sp"
+                            android:textColor="@color/brand_text_muted" />
+
+                        <TextView
+                            android:id="@+id/tvTime"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="---"
+                            android:gravity="end"
+                            android:textSize="13sp"
+                            android:textColor="@color/brand_text_title" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Parties Involved (Buyer & Seller) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false"
+                    android:layout_marginBottom="16dp">
+
+                    <!-- Billed To Box -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/rounded_background"
+                        android:backgroundTint="@color/brand_surface_light"
+                        android:padding="12dp"
+                        android:layout_marginEnd="6dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="BILLED TO"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif-bold"
+                            android:letterSpacing="0.05"
+                            android:textColor="@color/brand_text_muted"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:id="@+id/tvBuyerName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="---"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif-bold"
+                            android:textSize="14sp"
+                            android:textColor="@color/brand_text_title" />
+                    </LinearLayout>
+
+                    <!-- Sold By Box -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/rounded_background"
+                        android:backgroundTint="@color/brand_surface_light"
+                        android:padding="12dp"
+                        android:layout_marginStart="6dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="SOLD BY"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif-bold"
+                            android:letterSpacing="0.05"
+                            android:textColor="@color/brand_text_muted"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:id="@+id/tvSellerName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="---"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif-bold"
+                            android:textSize="14sp"
+                            android:textColor="@color/brand_text_title" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Order Summary Breakdown -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Produce Summary"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-bold"
+                    android:textSize="15sp"
+                    android:textColor="@color/brand_text_title"
+                    android:layout_marginBottom="10dp" />
+
+                <!-- Product Name Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Produce Item"
+                        android:textColor="@color/brand_text_muted"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/tvProduct"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="---"
+                        android:textColor="@color/brand_text_title"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-bold" />
+                </LinearLayout>
+
+                <!-- Quantity Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Total Quantity"
+                        android:textColor="@color/brand_text_muted"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/tvQuantity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="---"
+                        android:textColor="@color/brand_text_title"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-bold" />
+                </LinearLayout>
+
+                <!-- Unit Price Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Original Unit Price"
+                        android:textColor="@color/brand_text_muted"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/tvUnitPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="---"
+                        android:textColor="@color/brand_text_body"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <!-- Final Negotiated Price Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Final Agreed Price"
+                        android:textColor="@color/brand_green_primary"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-bold" />
+
+                    <TextView
+                        android:id="@+id/tvNegotiatedPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="---"
+                        android:textColor="@color/brand_green_primary"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-bold" />
+                </LinearLayout>
+
+                <!-- Divider before Total -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:background="@color/brand_card_stroke"
+                    android:layout_marginBottom="14dp" />
+
+                <!-- Total Amount Highlight Box -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/rounded_background"
+                    android:backgroundTint="@color/brand_green_soft"
+                    android:padding="14dp"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Total Amount Due"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-bold"
+                        android:textSize="16sp"
+                        android:textColor="@color/brand_text_title" />
+
+                    <TextView
+                        android:id="@+id/tvTotalAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₹0.00"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-black"
+                        android:textSize="22sp"
+                        android:textColor="@color/brand_green_primary" />
+                </LinearLayout>
+
+                <!-- Status & Payment Tag -->
+                <TextView
+                    android:id="@+id/tvTags"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Status: ACCEPTED | Payment: PENDING"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="12sp"
+                    android:textColor="@color/brand_text_body"
+                    android:gravity="center"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp" />
+
+                <!-- Legal / Electronic Receipt Footnote -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Computer generated digital tax receipt — valid for platform verification."
+                    android:textSize="11sp"
+                    android:textColor="@color/brand_text_muted"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom Floating Action Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="16dp"
+        android:background="@color/brand_surface_card"
+        android:elevation="8dp"
+        android:gravity="center_vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDownloadPdf"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="52dp"
+            android:text="@string/invoice_btn_download"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-bold"
+            android:backgroundTint="@color/brand_green_primary"
+            app:cornerRadius="12dp"
+            app:icon="@drawable/ic_download"
+            app:iconTint="@color/white"
+            app:iconGravity="textStart"
+            android:layout_marginEnd="8dp"
+            app:elevation="2dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnShare"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="52dp"
+            android:text="@string/invoice_btn_share"
+            android:textColor="@color/brand_green_primary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-bold"
+            app:strokeColor="@color/brand_green_primary"
+            app:strokeWidth="1.5dp"
+            app:cornerRadius="12dp"
+            app:icon="@drawable/ic_share"
+            app:iconTint="@color/brand_green_primary"
+            app:iconGravity="textStart"
+            android:layout_marginStart="8dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

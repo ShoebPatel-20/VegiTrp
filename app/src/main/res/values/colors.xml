@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Existing Project Colors -->
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <color name="light_green">#90EE90</color>
+    <color name="dark_green">#006400</color>
+    <color name="yellow">#FFFF00</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+
+    <color name="nature_green">#8BC34A</color>
+    <color name="nature_green_dark">#689F38</color>
+    <color name="nature_background">#F4F6F8</color>
+
+    <color name="buyer_green">#66BB6A</color>
+    <color name="buyer_green_dark">#43A047</color>
+
+    <color name="driver_blue">#1976D2</color>
+    <color name="driver_blue_dark">#0D47A1</color>
+    <color name="driver_background">#E3F2FD</color>
+
+    <color name="login_background">#E0F7FA</color>
+    <color name="login_card_background">#B3FFFFFF</color>
+    <color name="login_button_background">#81D4FA</color>
+    <color name="light_black">#424242</color>
+    <color name="hint_text_color">#757575</color>
+
+    <color name="gray_200">#EEEEEE</color>
+    <color name="gray_400">#BDBDBD</color>
+    <color name="gray_600">#757575</color>
+    <color name="gray_800">#424242</color>
+
+    <!-- Modern Premium Agriculture Brand Palette -->
+    <color name="brand_green_dark">#1B5E20</color>
+    <color name="brand_green_primary">#2E7D32</color>
+    <color name="brand_green_medium">#388E3C</color>
+    <color name="brand_green_light">#E8F5E9</color>
+    <color name="brand_green_tint">#C8E6C9</color>
+    <color name="brand_green_soft">#F0FDF4</color>
+    <color name="brand_accent_gold">#F59E0B</color>
+    <color name="brand_accent_orange">#E65100</color>
+    <color name="brand_surface_light">#F6FAF7</color>
+    <color name="brand_surface_card">#FFFFFF</color>
+    <color name="brand_card_stroke">#E2ECE4</color>
+    <color name="brand_text_title">#112317</color>
+    <color name="brand_text_body">#43584C</color>
+    <color name="brand_text_muted">#7C9286</color>
+    <color name="brand_shadow_green">#1A2E7D32</color>
+</resources>

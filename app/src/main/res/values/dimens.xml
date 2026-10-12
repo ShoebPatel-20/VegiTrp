@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Spacing dimens -->
+    <dimen name="spacing_xxs">4dp</dimen>
+    <dimen name="spacing_xs">8dp</dimen>
+    <dimen name="spacing_sm">12dp</dimen>
+    <dimen name="spacing_md">16dp</dimen>
+    <dimen name="spacing_lg">24dp</dimen>
+    <dimen name="spacing_xl">32dp</dimen>
+    <dimen name="spacing_xxl">48dp</dimen>
+
+    <!-- Corner Radii -->
+    <dimen name="radius_sm">8dp</dimen>
+    <dimen name="radius_md">16dp</dimen>
+    <dimen name="radius_lg">24dp</dimen>
+    <dimen name="radius_full">999dp</dimen>
+
+    <!-- Elevations -->
+    <dimen name="elevation_subtle">2dp</dimen>
+    <dimen name="elevation_card">6dp</dimen>
+    <dimen name="elevation_button">4dp</dimen>
+    <dimen name="elevation_button_pressed">8dp</dimen>
+
+    <!-- Splash Specific Dimensions -->
+    <dimen name="splash_logo_size">120dp</dimen>
+    <dimen name="splash_hero_size">180dp</dimen>
+    <dimen name="splash_button_height">56dp</dimen>
+    <dimen name="splash_button_radius">28dp</dimen>
+    <dimen name="splash_chip_padding_h">14dp</dimen>
+    <dimen name="splash_chip_padding_v">8dp</dimen>
+</resources>

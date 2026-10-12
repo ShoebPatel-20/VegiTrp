@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="1dp"
+    app:strokeColor="@color/brand_card_stroke"
+    app:strokeWidth="1dp"
+    app:cardBackgroundColor="@color/brand_surface_card">
+
+    <LinearLayout
+        android:id="@+id/llNotificationBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="top"
+        android:padding="16dp">
+
+        <FrameLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/rounded_background"
+            android:backgroundTint="@color/brand_green_soft"
+            android:layout_marginTop="2dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_notification_bell"
+                app:tint="@color/brand_green_primary"
+                android:contentDescription="Notification Alert" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="14dp">
+
+            <TextView
+                android:id="@+id/tvNotificationTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Order Dispatched"
+                android:text="Order Dispatched"
+                android:textColor="@color/brand_text_title"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-bold"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvNotificationMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Your fresh vegetable shipment #ORD-8492 has been picked up by the driver."
+                android:text="Your fresh vegetable shipment #ORD-8492 has been picked up by the driver."
+                android:textColor="@color/brand_text_body"
+                android:textSize="13sp"
+                android:fontFamily="sans-serif-medium"
+                android:lineSpacingExtra="2dp"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/tvNotificationTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="10 Oct 2026, 02:30 PM"
+                android:text="10 Oct 2026, 02:30 PM"
+                android:textColor="@color/brand_text_muted"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="11sp"
+                android:layout_marginTop="6dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

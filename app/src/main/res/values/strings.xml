@@ -1,0 +1,453 @@
+<resources>
+    <string name="app_name">VegiTrp</string>
+    <string name="welcome_message">Welcome to Vegetable Transport App</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_login">LOGIN</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="sign_in_button">SIGN IN</string>
+    <string name="forgot_password_prompt">Forgot Password? Click Here</string>
+    <string name="register_prompt">Don\'t have an account? Sign Up</string>
+    <string name="title_register">REGISTER</string>
+    <string name="name_hint">Full Name</string>
+    <string name="email_hint">Email Address</string>
+    <string name="mobile_hint">Mobile Number</string>
+    <string name="select_role_hint">Select Role</string>
+    <string name="login_prompt">Already have an account? Login</string>
+    <string name="leaf_logo_description">A green leaf logo, representing fresh vegetables.</string>
+    <string name="welcome_to_our_store">Welcome to our store</string>
+    <string name="get_your_vegetables">Get your vegetables</string>
+    <string name="get_started">Get Started</string>
+
+    <!-- Splash Screen Specific Strings -->
+    <string name="splash_badge_text">Farm to Market Network</string>
+    <string name="splash_tagline">Fresh Produce. Direct Transport.</string>
+    <string name="splash_description">Connecting farmers, drivers, and buyers in a unified digital ecosystem.</string>
+    <string name="splash_feature_farmer">Farm Fresh</string>
+    <string name="splash_feature_transit">Fast Transit</string>
+    <string name="splash_feature_market">Direct Trade</string>
+    <string name="splash_footer_trust">Trusted Agricultural Supply Chain</string>
+
+    <!-- Login Screen Specific Strings -->
+    <string name="login_welcome_back">Welcome Back</string>
+    <string name="login_subtitle">Sign in to manage your crops, transport &amp; orders</string>
+    <string name="login_header_badge">Secure Farm Portal</string>
+    <string name="login_dont_have_account">Don\'t have an account? </string>
+    <string name="login_sign_up">Sign Up</string>
+    <string name="login_forgot_password">Forgot Password?</string>
+
+    <!-- Register Screen Specific Strings -->
+    <string name="register_create_account">Create Account</string>
+    <string name="register_subtitle">Join the VegiTrp agricultural network</string>
+    <string name="register_header_badge">New Member Registration</string>
+    <string name="register_role_label">Select Your Role</string>
+
+    <!-- Forgot Password Screen Specific Strings -->
+    <string name="forgot_password_heading">Reset Password</string>
+    <string name="forgot_password_header_badge">Account Recovery</string>
+    <string name="forgot_password_subtitle">Enter your registered email and we\'ll send you a password reset link</string>
+    <string name="forgot_password_back_to_login">Back to Login</string>
+
+    <!-- Farmer Home Specific Strings -->
+    <string name="farmer_home_role_badge">🌱 Verified Farmer</string>
+    <string name="farmer_home_total_orders">Total Orders</string>
+    <string name="farmer_home_active_orders">Active Orders</string>
+    <string name="farmer_home_completed_orders">Completed</string>
+    <string name="farmer_home_total_earnings">Total Earnings</string>
+    <string name="farmer_home_quick_actions">Quick Actions</string>
+    <string name="farmer_home_new_listing">New Listing</string>
+    <string name="farmer_home_my_wallet">My Wallet</string>
+    <string name="farmer_home_overview_title">Overview &amp; Statistics</string>
+
+    <!-- Buyer Home Specific Strings -->
+    <string name="buyer_home_role_badge">🛒 Buyer</string>
+    <string name="buyer_home_total_purchases">Total Purchases</string>
+    <string name="buyer_home_pending_delivery">In Transit</string>
+    <string name="buyer_home_received_orders">Received</string>
+    <string name="buyer_home_total_spent">Total Spent</string>
+    <string name="buyer_home_quick_actions">Quick Actions</string>
+    <string name="buyer_home_buy_produce">Buy Produce</string>
+    <string name="buyer_home_my_wallet">My Wallet</string>
+    <string name="buyer_home_overview_title">Overview &amp; Statistics</string>
+
+    <!-- Driver Home Specific Strings -->
+    <string name="driver_home_role_badge">🚚 Verified Driver</string>
+    <string name="driver_home_total_deliveries">Total Deliveries</string>
+    <string name="driver_home_active_routes">Active Routes</string>
+    <string name="driver_home_completed_deliveries">Completed</string>
+    <string name="driver_home_total_earnings">Total Earnings</string>
+    <string name="driver_home_quick_actions">Quick Actions</string>
+    <string name="driver_home_find_routes">Find Routes</string>
+    <string name="driver_home_my_wallet">My Wallet</string>
+    <string name="driver_home_overview_title">Overview &amp; Statistics</string>
+
+    <!-- Marketplace Specific Strings -->
+    <string name="marketplace_header_title">Farm Marketplace</string>
+    <string name="marketplace_header_subtitle">Verified farm-fresh produce and direct crop listings</string>
+    <string name="marketplace_empty_title">No Listings Available</string>
+    <string name="marketplace_empty_subtitle">Available crops and fresh produce listings will appear here.</string>
+
+    <!-- My Orders Specific Strings -->
+    <string name="my_orders_header_title">My Orders</string>
+    <string name="my_orders_header_subtitle">Track, view, and manage your placed produce orders</string>
+    <string name="my_orders_empty_title">No Orders Placed Yet</string>
+    <string name="my_orders_empty_subtitle">Your placed crop and produce orders will appear here.</string>
+
+    <!-- My Requests Specific Strings -->
+    <string name="my_requests_header_title">My Requests</string>
+    <string name="my_requests_header_subtitle">Manage your active crop listings and transport requests</string>
+    <string name="my_requests_empty_title">No Requests Created</string>
+    <string name="my_requests_empty_subtitle">Create a crop listing or transport request using the button below.</string>
+
+    <!-- Add Listing Specific Strings -->
+    <string name="add_listing_header_title">New Produce Listing</string>
+    <string name="add_listing_header_subtitle">Publish fresh harvest stock directly to buyers and transporters</string>
+    <string name="add_listing_product_name_hint">Crop / Produce Name</string>
+    <string name="add_listing_quantity_hint">Available Quantity (e.g., 500 KG)</string>
+    <string name="add_listing_price_hint">Price per Unit (₹)</string>
+    <string name="add_listing_submit_button">Publish Listing</string>
+
+    <!-- Add Buyer Request Specific Strings -->
+    <string name="add_buyer_request_header_title">Create Purchase Order</string>
+    <string name="add_buyer_request_header_subtitle">Request fresh produce and delivery directly from farmers</string>
+    <string name="add_buyer_request_produce_label">Produce / Crop</string>
+    <string name="add_buyer_request_quantity_hint">Quantity (e.g., 50)</string>
+    <string name="add_buyer_request_unit_label">Unit</string>
+    <string name="add_buyer_request_price_hint">Target Price per Unit</string>
+    <string name="add_buyer_request_pincode_hint">Destination Pin Code</string>
+    <string name="add_buyer_request_pincode_helper">6-digit destination postal code</string>
+    <string name="add_buyer_request_submit_button">Submit Purchase Order</string>
+
+    <!-- Add Vehicle Specific Strings -->
+    <string name="add_vehicle_header_title">Register Vehicle</string>
+    <string name="add_vehicle_header_subtitle">Add your transport vehicle details to start accepting trips</string>
+    <string name="add_vehicle_section_title">Vehicle Information</string>
+    <string name="add_vehicle_name_hint">Vehicle Make / Model (e.g., Tata Ace)</string>
+    <string name="add_vehicle_number_hint">Vehicle Registration Number</string>
+    <string name="add_vehicle_number_helper">e.g., MH12AB1234</string>
+    <string name="add_vehicle_submit_button">Register Vehicle</string>
+
+    <!-- Edit Vehicle Specific Strings -->
+    <string name="edit_vehicle_header_title">Edit Vehicle</string>
+    <string name="edit_vehicle_header_subtitle">Update and manage your transport vehicle information</string>
+    <string name="edit_vehicle_section_title">Vehicle Information</string>
+    <string name="edit_vehicle_name_hint">Vehicle Make / Model (e.g., Tata Ace)</string>
+    <string name="edit_vehicle_number_hint">Vehicle Registration Number</string>
+    <string name="edit_vehicle_number_helper">e.g., MH12AB1234</string>
+    <string name="edit_vehicle_submit_button">Update Vehicle</string>
+
+    <!-- Vehicles Screen Specific Strings -->
+    <string name="vehicles_header_title">My Vehicles</string>
+    <string name="vehicles_header_subtitle">Manage and track your registered transport fleet</string>
+    <string name="vehicles_empty_title">No Vehicles Registered</string>
+    <string name="vehicles_empty_subtitle">Add your transport vehicle using the + button below to start accepting trips.</string>
+
+    <!-- Add Driver Specific Strings -->
+    <string name="add_driver_header_title">Register Driver</string>
+    <string name="add_driver_header_subtitle">Add a dedicated driver profile to assign to transport vehicles</string>
+    <string name="add_driver_section_title">Driver Information</string>
+    <string name="add_driver_name_hint">Full Name (e.g., Ramesh Kumar)</string>
+    <string name="add_driver_phone_hint">Mobile Number</string>
+    <string name="add_driver_phone_helper">10-digit mobile number</string>
+    <string name="add_driver_submit_button">Register Driver</string>
+
+    <!-- Edit Driver Specific Strings -->
+    <string name="edit_driver_header_title">Edit Driver</string>
+    <string name="edit_driver_header_subtitle">Update driver contact details and profile information</string>
+    <string name="edit_driver_section_title">Driver Information</string>
+    <string name="edit_driver_name_hint">Full Name (e.g., Ramesh Kumar)</string>
+    <string name="edit_driver_phone_hint">Mobile Number</string>
+    <string name="edit_driver_phone_helper">10-digit mobile number</string>
+    <string name="edit_driver_submit_button">Update Driver</string>
+
+    <!-- Driver Management Specific Strings -->
+    <string name="drivers_header_title">My Drivers</string>
+    <string name="drivers_header_subtitle">Manage and assign your registered fleet drivers</string>
+    <string name="drivers_empty_title">No Drivers Registered</string>
+    <string name="drivers_empty_subtitle">Add a dedicated driver profile to assign to your transport fleet.</string>
+
+    <string name="user_profile_picture_description">User profile picture</string>
+    <string name="user_name_placeholder">User Name</string>
+    <string name="user_email_placeholder">user.email@example.com</string>
+    <string name="vehicle_name_placeholder">Vehicle Name</string>
+    <string name="vehicle_number_placeholder">Vehicle Number</string>
+    <string name="edit_vehicle_button_description">Edit vehicle details</string>
+    <string name="delete_vehicle_button_description">Delete vehicle</string>
+    <string name="user_role_placeholder">Role</string>
+    <string name="vegetable_name_placeholder">Vegetable Name</string>
+    <string name="quantity_placeholder">Quantity (e.g., 10 kg)</string>
+    <string name="price_placeholder">Price per unit</string>
+    <string name="assigned_vehicle_placeholder">Assigned Vehicle</string>
+    <string name="status_placeholder">Status</string>
+    <string name="start_trip_button">Start Trip</string>
+    <string name="action_button">Action</string>
+    <string name="driver_name_placeholder">Driver Name</string>
+    <string name="driver_phone_placeholder">Phone Number</string>
+    <string name="edit_driver_button_description">Edit driver details</string>
+    <string name="delete_driver_button_description">Delete driver</string>
+    <string name="add_vehicle_fab_description">Add a new vehicle</string>
+    <string name="system_overview_title">System Overview</string>
+    <string name="total_users_label">Total Users:</string>
+    <string name="total_completed_trips_label">Total Completed Trips:</string>
+    <string name="total_system_revenue_label">Total System Revenue:</string>
+    <string name="initial_count_placeholder">0</string>
+    <string name="initial_revenue_placeholder">₹0.00</string>
+    <string name="user_roles_pie_chart_description">A pie chart showing the distribution of user roles.</string>
+    <string name="sales_summary_title">Sales Summary</string>
+    <string name="total_requests_label">Total Requests:</string>
+    <string name="total_revenue_label">Total Revenue:</string>
+    <string name="sales_bar_chart_description">A bar chart showing sales data.</string>
+    <string name="add_request_fab_description">Add a new transport request</string>
+    <string name="add_driver_fab_description">Add a new driver</string>
+    <string name="welcome_exclamation">Welcome!</string>
+    <string name="assign_dialog_title">Assign Driver and Vehicle</string>
+    <string name="assign_dialog_subtitle">Select vehicle and driver for this trip</string>
+    <string name="vehicle_spinner_description">Select a vehicle</string>
+    <string name="driver_spinner_description">Select a driver</string>
+    <string name="logout_button">Logout</string>
+    <string name="forgot_password_title">FORGOT PASSWORD</string>
+    <string name="forgot_password_instructions">Enter your email address to receive a password reset link.</string>
+    <string name="send_reset_link_button">SEND RESET LINK</string>
+    <string name="fill_all_fields_toast">Please fill all fields</string>
+    <string name="user_role_not_found_toast">User role not found in database.</string>
+    <string name="failed_to_save_user_data_toast">Failed to save user data.</string>
+    <string name="user_data_not_found_toast">User data not found in database.</string>
+    <string name="database_error_toast">Database error</string>
+    <string name="auth_failed_toast">Authentication failed</string>
+    <string name="registration_successful_toast">Registration successful.</string>
+    <string name="submit_listing_button">Submit Listing</string>
+    <string name="pie_chart_user_roles_label">User Roles</string>
+    <string name="submit_request_button">Submit Request</string>
+    <string name="request_submitted_successfully_toast">Request submitted successfully</string>
+    <string name="failed_to_submit_request_toast">Failed to submit request</string>
+    <string name="invalid_price_toast">Please enter a valid price</string>
+    <string name="invalid_mobile_toast">Please enter a valid 10-digit mobile number</string>
+    <string name="destination_pin_code_hint">Destination Pin Code</string>
+    <string name="invalid_pin_code_toast">Please enter a valid 6-digit pin code</string>
+    <string name="add_buyer_request_pickup_hint">Farm / Village / Collection Point</string>
+    <string name="add_buyer_request_pickup_helper">Enter village, taluka, district, or collection center</string>
+    <string name="add_buyer_request_delivery_hint">APMC / Market Yard / Warehouse / Buyer Location</string>
+    <string name="add_buyer_request_delivery_helper">Enter market yard, warehouse, or delivery destination</string>
+    <string name="add_buyer_request_geocoding_failed">Unable to resolve coordinates for the entered address. Please provide a more specific location (e.g. Village/Town, District, State).</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="select_role_prompt">Select Role</string>
+    <string name="select_product_prompt">Select Product Name</string>
+    <string name="confirm_password_hint">Confirm Password</string>
+    <string name="passwords_do_not_match">Passwords do not match</string>
+    <string name="select_driver_prompt">Select a Driver</string>
+    <string name="select_vehicle_prompt">Select a Vehicle</string>
+    <string name="save_driver_button">Save Driver</string>
+    <string name="add_vehicle_button">Add Vehicle</string>
+    <string name="update_driver_button">Update Driver</string>
+    <string name="update_vehicle_button">Update</string>
+
+    <string name="tab_all">All</string>
+    <string name="tab_interest">Interest</string>
+    <string name="tab_process">Process</string>
+    <string name="tab_completed">Completed</string>
+    <string name="tab_active">Active</string>
+    <string name="tab_processing">Processing</string>
+    <string name="tab_all_rides">All Rides</string>
+
+    <!-- Driver Profile Specific Strings -->
+    <string name="driver_profile_header_title">Driver Profile</string>
+    <string name="driver_profile_role_badge">Transporter / Driver</string>
+    <string name="driver_profile_recent_reviews">Client Reviews</string>
+    <string name="driver_profile_trips_label">Trips</string>
+    <string name="driver_profile_rating_label">Rating</string>
+    <string name="driver_profile_experience_label">Experience</string>
+
+    <!-- Farmer Profile Specific Strings -->
+    <string name="farmer_profile_header_title">Farmer Profile</string>
+    <string name="farmer_profile_role_badge">Farmer / Producer</string>
+    <string name="farmer_profile_active_crops_label">Active Crops</string>
+    <string name="farmer_profile_rating_label">Rating</string>
+    <string name="farmer_profile_items_sold_label">Harvests Sold</string>
+    <string name="farmer_profile_about_title">Farm &amp; Produce Information</string>
+    <string name="farmer_profile_direct_market">Direct Farm to Market</string>
+    <string name="farmer_profile_fresh_produce">Fresh Farm Harvest &amp; Produce</string>
+    <string name="edit_profile_button_description">Edit profile details</string>
+    <string name="location_hint">Location</string>
+
+    <!-- Buyer Profile Specific Strings -->
+    <string name="buyer_profile_header_title">Buyer Profile</string>
+    <string name="buyer_profile_role_badge">Buyer / Procurement</string>
+    <string name="buyer_profile_orders_label">Orders Placed</string>
+    <string name="buyer_profile_trust_score_label">Rating</string>
+    <string name="buyer_profile_member_label">Membership</string>
+    <string name="buyer_profile_highlights_title">Buyer Information</string>
+    <string name="buyer_profile_verified_procurement">Direct Produce Procurement</string>
+    <string name="buyer_profile_secure_transactions">Digital Wallet &amp; Order Payments</string>
+
+    <!-- Edit Profile Specific Strings -->
+    <string name="edit_profile_header_title">Edit Profile</string>
+    <string name="edit_profile_header_subtitle">Update your personal and contact information</string>
+    <string name="edit_profile_tap_photo_hint">Tap photo to change profile picture</string>
+    <string name="edit_profile_personal_details_title">Personal Details</string>
+    <string name="edit_profile_account_details_title">Account &amp; Contact</string>
+    <string name="edit_profile_security_note">Your profile details are used for orders, transport requests, and communication across the platform.</string>
+    <string name="edit_profile_dialog_save">Save Changes</string>
+    <string name="edit_profile_dialog_cancel">Cancel</string>
+
+    <!-- Settings Specific Strings -->
+    <string name="settings_header_title">Settings</string>
+    <string name="settings_header_subtitle">Preferences &amp; Account Controls</string>
+    <string name="settings_section_account">Account &amp; Profile</string>
+    <string name="settings_section_preferences">App Preferences</string>
+    <string name="settings_section_security">Privacy &amp; Security</string>
+    <string name="settings_section_support">Help &amp; Support</string>
+    <string name="settings_my_profile_title">My Profile</string>
+    <string name="settings_my_profile_subtitle">View your verified public profile</string>
+    <string name="settings_edit_profile_title">Edit Profile</string>
+    <string name="settings_edit_profile_subtitle">Update name, phone, and avatar</string>
+    <string name="settings_change_password_title">Change Password</string>
+    <string name="settings_change_password_subtitle">Manage login credentials</string>
+    <string name="settings_theme_title">Theme Mode</string>
+    <string name="settings_appearance_title">Display &amp; Appearance</string>
+    <string name="settings_notifications_title">Push Notifications</string>
+    <string name="settings_language_title">Language</string>
+    <string name="settings_privacy_title">Privacy Policy &amp; Terms</string>
+    <string name="settings_app_lock_title">App Security &amp; Lock</string>
+    <string name="settings_help_support_title">Help Center &amp; FAQs</string>
+    <string name="settings_contact_us_title">Contact Support</string>
+    <string name="settings_contact_us_subtitle">support@vegitrp.com</string>
+    <string name="settings_logout_title">Log Out</string>
+    <string name="settings_logout_subtitle">Sign out of your VegiTrp account</string>
+
+    <!-- Wallet Specific Strings -->
+    <string name="wallet_toolbar_title">My Wallet</string>
+    <string name="wallet_balance_label">CURRENT BALANCE</string>
+    <string name="wallet_balance_subtitle">Available for withdrawal &amp; payouts</string>
+    <string name="wallet_btn_withdraw">Withdraw Funds</string>
+    <string name="wallet_chart_title">Weekly Earnings</string>
+    <string name="wallet_chart_subtitle">Daily income trend for the last 7 days</string>
+    <string name="wallet_recent_transactions_title">Recent Transactions</string>
+    <string name="wallet_empty_transactions">No transactions yet</string>
+    <string name="wallet_empty_transactions_sub">Your deposits and withdrawals will appear here.</string>
+
+    <!-- Notifications Specific Strings -->
+    <string name="notifications_toolbar_title">Notifications</string>
+    <string name="notifications_header_subtitle">Updates on orders, trips, and account activity</string>
+    <string name="notifications_empty_title">No Notifications Yet</string>
+    <string name="notifications_empty_subtitle">You will receive alerts here about incoming orders, shipment tracking, and marketplace updates.</string>
+
+    <!-- KYC Specific Strings -->
+    <string name="kyc_toolbar_title">Identity Verification</string>
+    <string name="kyc_header_title">Verify Your Identity</string>
+    <string name="kyc_header_subtitle">Upload a valid government-issued ID (Driver\'s License, Aadhaar, or National ID) to verify your account.</string>
+    <string name="kyc_upload_guideline">Ensure your document photo is clear, well-lit, and all text is legible.</string>
+    <string name="kyc_btn_select_image">Choose Document Image</string>
+    <string name="kyc_btn_submit">Submit for Verification</string>
+    <string name="kyc_btn_uploading">Uploading...</string>
+    <string name="kyc_security_note">Your identity document is securely uploaded and encrypted for verified platform activity.</string>
+
+    <!-- Map Specific Strings -->
+    <string name="map_toolbar_title">Live Transport Map</string>
+    <string name="map_toolbar_route_title">Trip Route</string>
+    <string name="map_pickup_label">Pickup Location</string>
+    <string name="map_destination_label">Delivery Destination</string>
+    <string name="map_live_tracking_badge">LIVE ROUTE</string>
+
+    <!-- Chat Specific Strings -->
+    <string name="chat_toolbar_title">Live Chat</string>
+    <string name="chat_toolbar_subtitle">Order Discussion &amp; Updates</string>
+    <string name="chat_input_hint">Type a message...</string>
+    <string name="chat_send_desc">Send message</string>
+    <string name="chat_empty_title">No Messages Yet</string>
+    <string name="chat_empty_subtitle">Send a message to start communicating with your partner about this order.</string>
+
+    <!-- Order Details Specific Strings -->
+    <string name="order_details_toolbar_title">Order Details</string>
+    <string name="order_details_toolbar_subtitle">Manage order &amp; negotiations</string>
+    <string name="order_details_product_section_title">Produce Details</string>
+    <string name="order_details_delivery_section_title">Delivery &amp; Logistics</string>
+    <string name="order_details_negotiation_section_title">Negotiations &amp; Counter Offers</string>
+    <string name="order_details_negotiation_section_desc">Tap any offer to view pricing and quantity history</string>
+    <string name="order_details_btn_make_offer">Make An Offer</string>
+    <string name="order_details_btn_view_invoice">View Official Invoice</string>
+    <string name="order_details_btn_view_route">View Transport Route</string>
+
+    <!-- Invoice Specific Strings -->
+    <string name="invoice_toolbar_title">Tax Invoice</string>
+    <string name="invoice_toolbar_subtitle">Official Digital Receipt</string>
+    <string name="invoice_heading">TAX INVOICE</string>
+    <string name="invoice_btn_download">Download PDF</string>
+    <string name="invoice_btn_share">Share Invoice</string>
+
+    <!-- Review Specific Strings -->
+    <string name="review_toolbar_title">Submit Review</string>
+    <string name="review_toolbar_subtitle">Rate your transport experience</string>
+    <string name="review_heading_title">Rate Your Experience</string>
+    <string name="review_heading_subtitle">How was your transporter and produce delivery? Tap the stars below to rate.</string>
+    <string name="review_comment_hint">Share feedback on service quality, punctuality, or produce handling (Optional)</string>
+    <string name="review_btn_submit">Submit Review</string>
+    <string name="review_community_note">Your verified review helps maintain reliability and transparency across the VegiTrp agricultural marketplace.</string>
+
+    <!-- Buyer Dashboard Specific Strings -->
+    <string name="buyer_dashboard_title">Buyer Procurement Hub</string>
+    <string name="buyer_dashboard_subtitle">Track your requests, active orders, and completed deliveries</string>
+    <string name="buyer_dashboard_role_badge">BUYER</string>
+    <string name="buyer_fab_add_request_desc">Post new buy request</string>
+
+    <!-- Buyer Active Orders Strings -->
+    <string name="buyer_active_orders_empty_title">No Active Orders</string>
+    <string name="buyer_active_orders_empty_subtitle">Your active procurement orders and ongoing deliveries will appear here.</string>
+
+    <!-- Buyer Processing Orders Strings -->
+    <string name="buyer_processing_orders_empty_title">No Processing Orders</string>
+    <string name="buyer_processing_orders_empty_subtitle">Orders currently being processed or prepared for delivery will appear here.</string>
+
+    <!-- Buyer Completed Orders Strings -->
+    <string name="buyer_completed_orders_empty_title">No Completed Orders</string>
+    <string name="buyer_completed_orders_empty_subtitle">Your completed procurement orders and past deliveries will appear here.</string>
+
+    <!-- Incoming Requests Strings -->
+    <string name="incoming_requests_empty_title">No Incoming Requests</string>
+    <string name="incoming_requests_empty_subtitle">Incoming transport and procurement requests will appear here.</string>
+
+    <!-- Farmer All Orders Strings -->
+    <string name="farmer_all_orders_empty_title">No Orders Available</string>
+    <string name="farmer_all_orders_empty_subtitle">All available procurement orders and produce requests will appear here.</string>
+
+    <!-- Farmer Interested Orders Strings -->
+    <string name="farmer_interested_orders_empty_title">No Interested Orders</string>
+    <string name="farmer_interested_orders_empty_subtitle">Orders where you have expressed interest will appear here.</string>
+
+    <!-- Farmer Processing Orders Strings -->
+    <string name="farmer_processing_orders_empty_title">No Processing Orders</string>
+    <string name="farmer_processing_orders_empty_subtitle">Orders assigned to you and currently in progress will appear here.</string>
+
+    <!-- Farmer Completed Orders Strings -->
+    <string name="farmer_completed_orders_empty_title">No Completed Orders</string>
+    <string name="farmer_completed_orders_empty_subtitle">Completed produce sales and fulfilled orders will appear here.</string>
+
+    <!-- Driver All Rides Strings -->
+    <string name="driver_all_rides_empty_title">No Rides Available</string>
+    <string name="driver_all_rides_empty_subtitle">All available transport rides and delivery orders will appear here.</string>
+
+    <!-- Driver Interested Rides Strings -->
+    <string name="driver_interested_rides_empty_title">No Interested Rides</string>
+    <string name="driver_interested_rides_empty_subtitle">Transport rides you have shown interest in or been assigned to will appear here.</string>
+
+    <!-- Driver Processing Rides Strings -->
+    <string name="driver_processing_rides_empty_title">No Processing Rides</string>
+    <string name="driver_processing_rides_empty_subtitle">Transport rides currently in progress or assigned to you for delivery will appear here.</string>
+
+    <!-- Driver Completed Rides Strings -->
+    <string name="driver_completed_rides_empty_title">No Completed Rides</string>
+    <string name="driver_completed_rides_empty_subtitle">Completed delivery trips and fulfilled transport rides will appear here.</string>
+
+    <!-- Driver Dashboard Strings -->
+    <string name="driver_dashboard_title">My Trips</string>
+    <string name="driver_dashboard_subtitle">Manage your assigned and available rides</string>
+    <string name="driver_dashboard_role_badge">DRIVER</string>
+
+    <string-array name="user_roles">
+        <item>@string/select_role_prompt</item>
+        <item>Farmer</item>
+        <item>Driver</item>
+        <item>Buyer</item>
+    </string-array>
+</resources>

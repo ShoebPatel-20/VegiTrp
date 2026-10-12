@@ -1,0 +1,122 @@
+package com.example.vegitrp.fragments;
+
+import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ProgressBar;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.vegitrp.R;
+import com.example.vegitrp.adapters.OrderListAdapter;
+import com.example.vegitrp.models.Order;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class FarmerAllFragment extends Fragment {
+
+    private static final String TAG = "FarmerAllFragment";
+    private RecyclerView rvAllOrders;
+    private OrderListAdapter orderListAdapter;
+    private DatabaseReference mDatabase;
+    private ProgressBar progressBar;
+    private View layoutEmptyState;
+    private ValueEventListener valueEventListener;
+    private Query ordersRef;
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_farmer_all, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        rvAllOrders = view.findViewById(R.id.rv_all_orders);
+        progressBar = view.findViewById(R.id.progress_bar);
+        layoutEmptyState = view.findViewById(R.id.layout_empty_state);
+        rvAllOrders.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        orderListAdapter = new OrderListAdapter();
+        rvAllOrders.setAdapter(orderListAdapter);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        loadOrders();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (ordersRef != null && valueEventListener != null) {
+            ordersRef.removeEventListener(valueEventListener);
+        }
+    }
+
+    private void loadOrders() {
+        progressBar.setVisibility(View.VISIBLE);
+        rvAllOrders.setVisibility(View.GONE);
+        if (layoutEmptyState != null) {
+            layoutEmptyState.setVisibility(View.GONE);
+        }
+
+        // Load ALL orders from Firebase — no status filter so all statuses are visible
+        ordersRef = mDatabase.child("AllOrders").orderByChild("timestamp");
+        valueEventListener = ordersRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                List<Order> orderList = new ArrayList<>();
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    Order order = dataSnapshot.getValue(Order.class);
+                    if (order != null) {
+                        order.setKey(dataSnapshot.getKey());
+                        orderList.add(order);
+                    }
+                }
+                // Reverse so newest appears on top
+                Collections.reverse(orderList);
+                orderListAdapter.submitList(orderList);
+                progressBar.setVisibility(View.GONE);
+
+                if (orderList.isEmpty()) {
+                    if (layoutEmptyState != null) {
+                        layoutEmptyState.setVisibility(View.VISIBLE);
+                    }
+                    rvAllOrders.setVisibility(View.GONE);
+                } else {
+                    if (layoutEmptyState != null) {
+                        layoutEmptyState.setVisibility(View.GONE);
+                    }
+                    rvAllOrders.setVisibility(View.VISIBLE);
+                }
+                Log.d(TAG, "Loaded " + orderList.size() + " orders for FarmerAll");
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.w(TAG, "Failed to load orders.", error.toException());
+                progressBar.setVisibility(View.GONE);
+            }
+        });
+    }
+}

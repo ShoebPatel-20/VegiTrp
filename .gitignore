@@ -1,0 +1,28 @@
+﻿# Gradle generated files
+.gradle/
+build/
+app/build/
+
+# Android Studio / IDE
+.idea/
+.vscode/
+*.iml
+
+# Local Android SDK configuration
+local.properties
+
+# Signing keys and credentials
+*.jks
+*.keystore
+keystore.properties
+
+# Local environment files
+.env
+.env.*
+
+# Build output logs
+build_output.txt
+
+# Operating system files
+.DS_Store
+Thumbs.db
